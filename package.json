@@ -2,9 +2,9 @@
 	"name": "webhisotry",
 	"version": "1.0.0",
 	"description": "",
-	"main": "main.js",
+	"main": "index.js",
 	"scripts": {
-		"build": "webpack src/main.js"
+		"build": "webpack --config buildConfig/webpack.config.js"
 	},
 	"author": "",
 	"license": "ISC",
