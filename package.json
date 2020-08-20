@@ -1,0 +1,15 @@
+{
+	"name": "webhisotry",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"build": "webpack src/main.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"webpack": "^4.44.1",
+		"webpack-cli": "^3.3.12"
+	}
+}
