@@ -24,7 +24,7 @@ module.exports = {
 		new CleanWebpackPlugin(),// 清理重複的
 
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, '../public/index.html') // 讀取 輸出的index的模板
+			template: path.resolve(__dirname, '../template/index.html') // 讀取 輸出的index的模板
 		})
 
 	]
