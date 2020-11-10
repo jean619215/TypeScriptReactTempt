@@ -14,9 +14,13 @@
 		"jsx": "react",
 		"allowJs": true,
 		"baseUrl": "./",
+		"typeRoots": [
+			"node_modules/@types",
+			"src/typings"
+		],
 	},
 	"include": [
-		"src/**/*.tsx"
+		"src/**/*"
 	],
 	"exclude": [
 		"node_modules"
