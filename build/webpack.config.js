@@ -1,18 +1,27 @@
 const webpack = require('webpack');
-
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const path = require('path');
+const dirname = path.dirname(__dirname);
+
 module.exports = {
 	mode: 'development', // 開發模式
-	entry: path.resolve(__dirname, '../src/main.tsx'),    // 入口文件
+	entry: path.resolve(dirname, '../src/main.tsx'),    // 入口文件
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js'],
+		// Absolute path can be used
+		extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],
+		modules: [
+			path.resolve(dirname, 'node_modules'),
+		],
+		alias: {
+			'src': path.resolve(dirname, 'src/'),
+			'assets': path.resolve(dirname, 'assets/'),
+		}
 	},
 	output: {
 		filename: '[name].[hash:8].js',      // 打包後的文件名稱
-		path: path.resolve(__dirname, '../dist')  // 打包後的目錄
+		path: path.resolve(dirname, '../dist')  // 打包後的目錄
 	},
 	module: {
 		rules: [
@@ -47,7 +56,7 @@ module.exports = {
 
 		// 讀取 輸出的index的模板
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, '../template/index.html')
+			template: path.resolve(dirname, '../template/index.html')
 		}),
 
 		// 需要告诉webpack忽略 scss.d.ts。
@@ -55,6 +64,7 @@ module.exports = {
 
 	],
 	devServer: {
+		// Webpack launch browser automatically
 		open: true
 	}
 }
