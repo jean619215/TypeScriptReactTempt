@@ -45,5 +45,8 @@ module.exports = {
 		// 需要告诉webpack忽略 scss.d.ts。
 		new webpack.WatchIgnorePlugin([/css\.d\.ts$/, /scss\.d\.ts$/])
 
-	]
+	],
+	devServer: {
+		open: true
+	}
 }
